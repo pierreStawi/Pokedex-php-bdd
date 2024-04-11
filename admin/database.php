@@ -44,12 +44,14 @@ class Database {
 
 public Static function getPokemonAdmin(){
     $db = Database::connect();
-    $mamadou = $db->query("SELECT p.img_poke, p.nom, p.competence, p.taille, p.masse, p.attack, p.defence FROM pokemon AS p");
+    $rechercheType = $db->query("SELECT p.img_poke, p.nom, p.competence, p.taille, p.masse, p.attack, p.defence, p.num_poke, type.nom AS type
+    FROM pokemon AS p 
+    JOIN pokemon_type ON p.num_poke = pokemon_type.poke_id
+    JOIN type ON pokemon_type.type_id = type.id_type");
 
-    return $mamadou;
-
-
+    return $rechercheType;
 }
+
 
 
 

@@ -20,8 +20,9 @@
                 <table class="table table-striped table-bordered">
                   <thead>
                     <tr>
-                      <th>Actions</th>
+                      <th>Image</th>
                       <th>Nom</th>
+                      <th>Type</th>
                       <th>Competence</th>
                       <th>Taille</th>
                       <th>Poids</th>
@@ -32,7 +33,7 @@
                   <tbody>
 
 
-                      <?php
+<?php
 
 require 'database.php';
 $yoan = Database::getPokemonAdmin();
@@ -41,6 +42,7 @@ while ($item = $yoan->fetch()) {
     echo '<tr>';
     echo '<td><img src="../images/' . $item['img_poke'] . '"></td>'; // Correction ici
     echo '<td>' . $item['nom'] . '</td>';
+    echo '<td>' . $item['type'] . '</td>';
     echo '<td>' . $item['competence'] . '</td>';
     echo '<td>' . $item['taille'] . '</td>';
     echo '<td>' . $item['masse'] . '</td>';
