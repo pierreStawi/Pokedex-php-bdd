@@ -9,7 +9,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="../css/styles.css">
+        <!-- <link rel="stylesheet" href="../css/styles.css"> -->
+        <script src="script.js"></script>
     </head>
     
     <body>
@@ -17,17 +18,17 @@
         <div class="container admin">
             <div class="row">
                 <h1><strong>Pokemons   </strong><a href="insert.php" class="btn btn-success btn-lg"><span class="bi-plus"></span> Ajouter</a></h1>
-                <table class="table table-striped table-bordered">
+                <table id ="tableauPokemons" class="table table-striped table-bordered">
                   <thead>
                     <tr>
                       <th>Image</th>
-                      <th>Nom</th>
-                      <th>Type</th>
-                      <th>Competence</th>
-                      <th>Taille</th>
-                      <th>Poids</th>
-                      <th>Attack</th>
-                      <th>Défense</th>
+                      <th onClick="triTableau('nom')">Nom-tri par clic</th>
+                      <th>Type-tri par clic</th>
+                      <th>Competence-tri par clic</th>
+                      <th>Taille-tri par clic</th>
+                      <th>Poids-tri par clic</th>
+                      <th>Attack-tri par clic</th>
+                      <th>Défense-tri par clic</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -49,8 +50,16 @@ while ($item = $yoan->fetch()) {
     echo '<td>' . $item['attack'] . '</td>';
     echo '<td>' . $item['defence'] . '</td>';
     echo '</tr>';
-  }
+  };
+// var_dump ($yoan->fetchAll());
+  
 
+  // $montableau = array("p.nom", "p.competence", "p.taille", "p.masse");
+// 	sort($montableau, SORT_NATURAL | SORT_FLAG_CASE);
+// 	foreach ($montableau as $key => $val) {
+// 		echo "montableau[" . $key . "] = " . $val . "</br>\n";
+
+//         return $montableau;
 
                       
                       ?>

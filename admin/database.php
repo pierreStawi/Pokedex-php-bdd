@@ -30,6 +30,8 @@ class Database {
         return $clavier;
     }
 
+    
+
 
 
     // public static function RechercheCategory(){
@@ -48,9 +50,12 @@ public Static function getPokemonAdmin(){
     FROM pokemon AS p 
     JOIN pokemon_type ON p.num_poke = pokemon_type.poke_id
     JOIN type ON pokemon_type.type_id = type.id_type");
+    
 
     return $rechercheType;
 }
+
+
 
 
 
