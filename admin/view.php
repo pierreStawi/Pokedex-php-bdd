@@ -6,9 +6,6 @@ require 'database.php';
 $theo = Database::getPokemonById($_GET['img_poke']);
 
 
-echo  <img src="images/' . $pokemon['img_poke'] . '" class="img-fluid" alt="...">
-
-
 ?>
 
 <!DOCTYPE html>
